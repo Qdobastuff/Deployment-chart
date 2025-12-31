@@ -86,16 +86,11 @@
         }
         
         .section {
-            margin-bottom: 15px;
+            margin-bottom: 0;
         }
         
         .section-title {
-            background: #ecf0f1;
-            padding: 8px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            color: #2c3e50;
+            display: none;
         }
         
         .position-row {
@@ -162,14 +157,62 @@
         @media print {
             body {
                 background: white;
+                margin: 0;
+                padding: 5px;
             }
             
-            .button-container, #instructions {
+            .button-container, #instructions, .header {
                 display: none !important;
             }
             
             .day-section {
-                page-break-after: always;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 4px;
+                padding: 4px;
+                font-size: 8px;
+            }
+            
+            .day-header {
+                font-size: 9px;
+                padding: 3px;
+                margin: -4px -4px 3px -4px;
+            }
+            
+            .shift-container {
+                gap: 4px;
+            }
+            
+            .shift {
+                padding: 3px;
+            }
+            
+            .shift-title {
+                font-size: 8px;
+                padding: 2px;
+                margin: -3px -3px 3px -3px;
+            }
+            
+            .position-row {
+                margin-bottom: 1px;
+                grid-template-columns: 70px 1fr;
+                gap: 4px;
+            }
+            
+            .position-label {
+                font-size: 7px;
+            }
+            
+            input[type="text"] {
+                font-size: 7px;
+                padding: 1px 2px;
+                border: 1px solid #ddd;
+            }
+            
+            #schedule {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
             }
         }
         
